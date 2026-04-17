@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Geist, Sora, Instrument_Serif, Geist_Mono } from "next/font/google";
 import { cn } from "@/lib/utils";
+import "@heartland/ui/css/theme.css";
 import "./globals.css";
 
 const inter = Inter({
