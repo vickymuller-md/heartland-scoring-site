@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@heartland/ui": "github:vickymuller-md/heartland-ui#v0.2.0",
+    "@heartland/ui": "github:vickymuller-md/heartland-ui#v0.2.1",
     "heartland-scoring": "^1.0.0",
     "next": "^16.2.1",
     "react": "^19.2.4",
