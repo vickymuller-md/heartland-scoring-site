@@ -74,7 +74,7 @@ export default function RootLayout({
         geistMono.variable,
       )}
     >
-      <body className="min-h-screen bg-terminal text-cool antialiased selection:bg-alert/40">
+      <body className="min-h-screen flex flex-col bg-terminal font-editorial text-cool antialiased selection:bg-alert/40">
         {children}
       </body>
     </html>
