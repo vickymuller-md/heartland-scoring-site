@@ -44,6 +44,8 @@ export default function Home() {
               { label: "npm install", href: "https://www.npmjs.com/package/heartland-scoring", external: true },
               { label: "GitHub", href: "https://github.com/vickymuller-md/heartland-scoring", external: true },
               { label: "Changelog", href: "https://github.com/vickymuller-md/heartland-scoring/blob/main/CHANGELOG.md", external: true },
+              { label: "Software Heritage (package)", href: "https://archive.softwareheritage.org/swh:1:snp:bcad7b62a3b296e9fd1074edc88e94f8f9d19319/", external: true },
+              { label: "Site source archive", href: "https://archive.softwareheritage.org/swh:1:snp:d065da40d3ef68cdb8bbd33ca18125a712bbc3ce/", external: true },
             ],
           },
         ]}
