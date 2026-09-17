@@ -23,12 +23,12 @@ export function Colophon() {
             </span>{" "}
             (v1.0.0). Zenodo.{" "}
             <a
-              href="https://doi.org/10.5281/zenodo.18566403"
+              href="https://doi.org/10.5281/zenodo.19101219"
               target="_blank"
               rel="noopener noreferrer"
               className="text-alert underline decoration-alert/30 underline-offset-4 hover:decoration-alert"
             >
-              https://doi.org/10.5281/zenodo.18566403
+              https://doi.org/10.5281/zenodo.19101219
             </a>
           </p>
         </div>
@@ -55,7 +55,7 @@ export function Colophon() {
 
           <FooterBlock title="Research">
             <FooterLink
-              href="https://doi.org/10.5281/zenodo.18566403"
+              href="https://doi.org/10.5281/zenodo.19101219"
               external
             >
               Zenodo deposit
@@ -63,7 +63,7 @@ export function Colophon() {
             <FooterLink href="https://doi.org/10.17605/OSF.IO/YUSGH" external>
               OSF deposit
             </FooterLink>
-            <FooterLink href="https://www.cureus.com/" external>
+            <FooterLink href="https://doi.org/10.7759/cureus.104817" external>
               Cureus article
             </FooterLink>
             <FooterLink

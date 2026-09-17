@@ -205,8 +205,8 @@ export function Reference() {
           </div>
 
           <p className="mt-6 max-w-3xl font-editorial text-[13.5px] leading-relaxed text-cool/60">
-            HEARTLAND is a pragmatic heuristic designed for clinical
-            decision support at the point of discharge — it is not a direct
+            HEARTLAND is a pragmatic heuristic designed for risk
+            stratification at the point of discharge — it is not a direct
             competitor to mortality-prognostic scores. The comparison above
             describes structural differences, not relative predictive
             performance.

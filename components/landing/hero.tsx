@@ -28,7 +28,7 @@ export function Hero() {
             <p className="mt-7 max-w-xl font-editorial text-[17px] leading-[1.65] text-cool/75 md:text-[18px]">
               A pure TypeScript implementation of the ten-variable risk
               heuristic from the peer-reviewed HEARTLAND Protocol. Designed
-              for EHR vendors, clinical decision-support platforms, and
+              for EHR vendors, clinical software platforms, and
               research tools that want the scoring engine without adopting
               the full reference app.
             </p>
@@ -59,7 +59,7 @@ export function Hero() {
             </div>
 
             <p className="mt-12 max-w-md font-editorial text-[12.5px] leading-relaxed text-stone">
-              Clinical decision-support tool, not a medical device. Not
+              Clinical implementation companion, not a medical device. Not
               FDA-cleared. Built for licensed clinicians. Pragmatic heuristic
               — formal prospective validation is a defined research objective.
             </p>
