@@ -13,9 +13,9 @@ export function Abstract() {
             Why extract the scoring engine
           </p>
           <h2 className="mt-5 text-[clamp(1.85rem,3.5vw,2.85rem)] font-editorial font-semibold leading-[1.15] tracking-[-0.015em] text-cool">
-            Existing risk scores omit distance to care and social support.{" "}
+            Ten weighted criteria, including distance to care and social support.{" "}
             <span className="font-display italic font-normal text-alert">
-              HEARTLAND keeps them.
+              One transparent calculation.
             </span>
           </h2>
         </div>
@@ -23,28 +23,28 @@ export function Abstract() {
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
           <StatCard
             value="10"
-            heading="binary variables"
+            heading="weighted criteria"
             note="Age, prior admission, eGFR, BNP, SBP, diabetes, LVEF, CKM stage, distance, social support."
           />
           <StatCard
             value="3"
             heading="tiered pathways"
-            note="Low, moderate, and high risk map to explicit follow-up, monitoring, and support decisions."
+            note="Low, moderate, and high heuristic tiers map to protocol-derived example pathways; they are not outcome probabilities."
             accent
           />
           <StatCard
-            value="0"
-            heading="runtime dependencies"
-            note="Pure scoring functions. Optional Zod peer dependency for input validation."
+            value="18"
+            heading="maximum points"
+            note="Ten Boolean inputs carry different weights. Pure scoring functions; Zod is required by the public entry point."
           />
         </div>
 
         <p className="mx-auto mt-16 max-w-2xl text-center font-editorial text-[15.5px] leading-relaxed text-cool/75">
-          MAGGIC is prognostic. GWTG-HF is a registry. SHFM is a survival
-          calculator. None is a scoring engine designed for rural primary
-          care — with <span className="text-cool">distance to cardiology</span>{" "}
-          and <span className="text-cool">social support</span> as first-class
-          variables. <span className="text-cool">This package is.</span>
+          The calculator exposes each criterion and its contribution. It
+          includes <span className="text-cool">distance to cardiology</span>{" "}
+          and <span className="text-cool">social support</span>, but that design
+          choice does not establish predictive performance or superiority to
+          validated prognostic scores.
         </p>
 
         <div className="mt-20 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
@@ -53,7 +53,7 @@ export function Abstract() {
             healthcare professionals as an educational implementation-support
             resource. It does not provide medical diagnoses, treatment
             recommendations for individual patients, or replace clinical
-            judgment. Not intended for direct patient care. Not FDA-cleared.
+            judgment. Not intended for direct patient care or unsupervised clinical use.
           </Disclaimer>
           <Disclaimer heading="Heuristic under development">
             The HEARTLAND Risk Stratification Framework is a proposed tool

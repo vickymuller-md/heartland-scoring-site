@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeartLineMark } from "./heart-mark";
+import { SCORING_VERSION } from "@/lib/package-info";
 
 /**
  * Masthead — navigation bar mirroring the wordmark from
@@ -16,7 +17,7 @@ export function Masthead() {
             Heartland Scoring
           </span>
           <span className="ml-1 hidden rounded-full border border-grid bg-panel px-2 py-0.5 font-mono text-[10.5px] tracking-tight text-cool/70 sm:inline-flex">
-            v1.0.0
+            v{SCORING_VERSION}
           </span>
         </Link>
 

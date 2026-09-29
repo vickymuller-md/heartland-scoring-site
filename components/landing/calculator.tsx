@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import {
   calculateRiskScore,
   RISK_VARIABLES,
@@ -60,11 +60,11 @@ const TIER_STYLES: Record<
 
 /**
  * Calculator — the centerpiece. Uses the published npm package directly
- * (no local fork), so the live result is provably the same logic anyone
- * gets with `npm install heartland-scoring`. Two-column layout: checkbox
+ * (no local fork). The server passes its resolved package version, not
+ * a claim about npm's current latest release. Two-column layout: checkbox
  * grid on the left, "pathology report"-style output on the right.
  */
-export function Calculator() {
+export function Calculator({ packageVersion }: { packageVersion: string }) {
   const [input, setInput] = useState<RiskInput>(INITIAL_INPUT);
 
   const result = useMemo(() => calculateRiskScore(input), [input]);
@@ -100,10 +100,15 @@ export function Calculator() {
             </h2>
             <p className="mt-6 max-w-md font-editorial text-[15.5px] leading-relaxed text-cool/70">
               This panel imports <code className="font-mono text-[13px]">calculateRiskScore</code>{" "}
-              from <code className="font-mono text-[13px]">heartland-scoring@1.0.0</code> exactly
+              from <code className="font-mono text-[13px]">heartland-scoring@{packageVersion}</code> exactly
               as a consumer would. Every tick below triggers the same pure
               function the package ships.
             </p>
+            <aside role="note" className="mt-6 rounded-2xl border border-grid bg-terminal p-5 font-editorial text-[13px] leading-relaxed text-cool/80">
+              <strong>Synthetic demonstration only.</strong> Do not enter real patient, personal, or health information.
+              This software does not authorize real-world or unsupervised clinical use.
+              Unchecked boxes represent negative findings in this fictional example, not unknown values.
+            </aside>
 
             <button
               type="button"
@@ -140,7 +145,7 @@ export function Calculator() {
                         <li key={v.key}>
                           <label
                             htmlFor={id}
-                            className="flex cursor-pointer items-start gap-3 px-3 py-3.5 transition-colors hover:bg-panel rounded-xl"
+                            className="flex cursor-pointer items-start gap-3 px-3 py-3.5 transition-colors hover:bg-panel rounded-xl focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-alert"
                           >
                             <span
                               className={
@@ -206,13 +211,6 @@ function ResultCard({ result }: { result: RiskResult }) {
   const style = TIER_STYLES[result.tier];
   const percent = Math.min(100, (result.totalScore / result.maxScore) * 100);
 
-  // Remount the score number on every change to replay the count animation.
-  // Cheap and legible; no refs.
-  const [mountKey, setMountKey] = useState(0);
-  useEffect(() => {
-    setMountKey((k) => k + 1);
-  }, [result.totalScore]);
-
   return (
     <div
       aria-live="polite"
@@ -242,7 +240,7 @@ function ResultCard({ result }: { result: RiskResult }) {
 
       <div className="mt-6 flex items-baseline gap-2">
         <span
-          key={mountKey}
+          key={result.totalScore}
           className={
             "hs-count-in font-editorial text-7xl font-semibold leading-none tracking-[-0.02em] " +
             style.accentText

@@ -41,11 +41,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://scoring.heartlandprotocol.org"),
   title: "heartland-scoring · Risk score engine for rural heart failure",
   description:
-    "A dependency-free TypeScript package that implements the HEARTLAND Risk Score — ten binary clinical variables, three care tiers, care pathway recommendations. Part of the peer-reviewed HEARTLAND Protocol.",
+    "TypeScript implementation of the HEARTLAND proposed framework pending validation: ten weighted criteria, 0–18 points, three tiers. Synthetic demonstration; Zod required.",
   openGraph: {
     title: "heartland-scoring · Risk score engine for rural heart failure",
     description:
-      "A dependency-free TypeScript package that implements the HEARTLAND Risk Score. Ten variables, three tiers, care pathway recommendations.",
+      "HEARTLAND proposed framework pending validation: ten weighted criteria, 0–18 points, three tiers. Synthetic demonstration with a TypeScript package; Zod required.",
     url: "https://scoring.heartlandprotocol.org",
     siteName: "HEARTLAND Scoring",
     type: "website",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "heartland-scoring · Risk score engine for rural heart failure",
     description:
-      "A dependency-free TypeScript package implementing the HEARTLAND Risk Score.",
+      "TypeScript implementation of the HEARTLAND proposed framework pending validation. Synthetic demonstration, ten weighted criteria; Zod required.",
   },
 };
 

@@ -5,6 +5,8 @@
  * "what this returns" callouts.
  */
 
+import { SCORING_VERSION } from "@/lib/package-info";
+
 type Token = { t: string; c?: string };
 
 const TOK = {
@@ -66,7 +68,7 @@ const LINES: Token[][] = [
     { t: "false", c: TOK.keyword },
     { t: ",", c: TOK.punct },
     { t: "  " },
-    { t: "// Cr 1.3 mg/dL", c: TOK.comment },
+    { t: "// eGFR 60 mL/min/1.73 m2", c: TOK.comment },
   ],
   [
     { t: "  elevatedNatriuretic", c: TOK.prop },
@@ -156,15 +158,15 @@ export function QuickStart() {
               </span>
             </h2>
             <p className="mt-6 max-w-md font-editorial text-[15.5px] leading-relaxed text-cool/70">
-              Pure TypeScript, zero runtime dependencies, ESM + CJS dual
-              output. Works in Next.js, Remix, Astro, Node, Bun, Deno, edge
-              runtimes, and every modern bundler.
+              TypeScript with ESM + CJS output. This site uses the resolved
+              package version shown below. Verify compatibility with your
+              own runtime and integration; this demo does not certify an EHR.
             </p>
 
             <ul className="mt-8 space-y-4 font-editorial text-[14.5px] text-cool/80">
               <FeatureLine>
-                <b>Zero deps.</b> Zod is optional and lives behind a peer
-                dependency for input validation.
+                <b>Zod is required.</b> The public entry point exports the
+                validation schema even when you only call scoring functions.
               </FeatureLine>
               <FeatureLine>
                 <b>Typed end-to-end.</b> <code className="font-mono text-[13px]">RiskInput</code>,{" "}
@@ -193,7 +195,7 @@ export function QuickStart() {
                   index.ts
                 </p>
                 <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-stone">
-                  v1.0.0
+                  v{SCORING_VERSION}
                 </p>
               </div>
 
@@ -225,8 +227,9 @@ export function QuickStart() {
             </div>
 
             <p className="mt-4 text-center font-editorial text-[12.5px] text-stone">
-              Same code works verbatim in React Server Components, API
-              routes, or a plain Node script.
+              Fictional, fully assessed inputs. Unknown values must not be
+              silently converted to false. Confirm all ten criteria before
+              interpreting a score.
             </p>
           </div>
         </div>

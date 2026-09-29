@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeartLineMark } from "./heart-mark";
+import { SCORING_VERSION } from "@/lib/package-info";
 
 /**
  * Colophon — footer mirroring the app landing's structure (brand block +
@@ -13,7 +14,7 @@ export function Colophon() {
         {/* Citation */}
         <div className="mb-14 rounded-2xl border border-grid bg-panel p-6 md:p-8">
           <p className="font-editorial text-[11.5px] uppercase tracking-[0.18em] text-alert">
-            How to cite
+            Historical software archive — distinct from the installed version
           </p>
           <p className="mt-3 font-editorial text-[14.5px] leading-relaxed text-cool/85 md:text-[15px]">
             Muller Ferreira, V. (2026).{" "}
@@ -23,12 +24,12 @@ export function Colophon() {
             </span>{" "}
             (v1.0.0). Zenodo.{" "}
             <a
-              href="https://doi.org/10.5281/zenodo.19101219"
+              href="https://doi.org/10.5281/zenodo.19634995"
               target="_blank"
               rel="noopener noreferrer"
               className="text-alert underline decoration-alert/30 underline-offset-4 hover:decoration-alert"
             >
-              https://doi.org/10.5281/zenodo.19101219
+              https://doi.org/10.5281/zenodo.19634995
             </a>
           </p>
         </div>
@@ -48,8 +49,8 @@ export function Colophon() {
             </p>
             <p className="mt-6 font-editorial text-[12.5px] leading-relaxed text-stone">
               Built by Vicky Muller Ferreira, MD. For licensed clinicians
-              only. Not a medical device. Not for direct patient care. No
-              patient health information is ever collected.
+              only. Synthetic demonstration, not for direct patient care.
+              Do not enter real patient, personal, or health information.
             </p>
           </div>
 
@@ -58,7 +59,7 @@ export function Colophon() {
               href="https://doi.org/10.5281/zenodo.19101219"
               external
             >
-              Zenodo deposit
+              Toolkit v3.3 archive
             </FooterLink>
             <FooterLink href="https://doi.org/10.17605/OSF.IO/YUSGH" external>
               OSF deposit
@@ -121,7 +122,7 @@ export function Colophon() {
         <div className="mt-14 flex flex-col gap-3 border-t border-grid pt-6 font-editorial text-[12.5px] text-stone md:flex-row md:items-center md:justify-between">
           <p>© 2026 Vicky Muller Ferreira, MD · Released under MIT</p>
           <p>
-            <span className="font-mono">heartland-scoring</span> v1.0.0 ·
+            <span className="font-mono">heartland-scoring</span> v{SCORING_VERSION} ·
             open source
           </p>
         </div>

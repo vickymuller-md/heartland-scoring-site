@@ -12,6 +12,13 @@ const CATEGORY_STYLES: Record<string, string> = {
   "Social/Geographic": "bg-sage/10 text-sage-deep border-sage/25",
 };
 
+// Presentation-only corrections for legacy package labels; no scoring changes.
+const FRAMEWORK_LABELS: Record<string, string> = {
+  "Outcome predicted": "Not validated to predict outcomes",
+  "Primary care feasibility": "Not established in clinical use",
+  "Intended use": "Educational implementation-support resource",
+};
+
 /**
  * Reference — combines the three reference tables (variables, care
  * pathways, comparison) into one contiguous "technical documentation"
@@ -42,12 +49,13 @@ export function Reference() {
               one protocol.
             </h2>
             <p className="mt-6 max-w-md font-editorial text-[15.5px] leading-relaxed text-cool/70">
-              Every value below is exported by the package at runtime. The
-              tables on this page are generated from{" "}
+              Scoring criteria and pathways below are exported by the installed
+              package. The tables use{" "}
               <code className="font-mono text-[13px]">RISK_VARIABLES</code>,{" "}
               <code className="font-mono text-[13px]">CARE_PATHWAYS</code>, and{" "}
               <code className="font-mono text-[13px]">COMPARISON_TABLE_DATA</code>{" "}
-              — not hardcoded.
+              . Legacy descriptive comparison labels are clarified here; no
+              scoring weights or thresholds are changed.
             </p>
           </div>
           <div className="md:col-span-7" />
@@ -196,7 +204,7 @@ export function Reference() {
                     <td className="py-4 pr-4 text-cool/70">{row.gwtgHf}</td>
                     <td className="py-4 pr-4 text-cool/70">{row.shfm}</td>
                     <td className="py-4 pr-4 font-medium text-cool">
-                      {row.heartland}
+                      {FRAMEWORK_LABELS[row.characteristic] ?? row.heartland}
                     </td>
                   </tr>
                 ))}

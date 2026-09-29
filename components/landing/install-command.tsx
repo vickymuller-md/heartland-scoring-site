@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const COMMAND = "npm install heartland-scoring";
+const COMMAND = "npm install heartland-scoring zod";
 
 /**
  * InstallCommand — the primary hero CTA. Acts as both a visual
@@ -25,8 +25,13 @@ export function InstallCommand() {
         textarea.style.left = "-9999px";
         document.body.appendChild(textarea);
         textarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
+        let didCopy = false;
+        try {
+          didCopy = document.execCommand("copy");
+        } finally {
+          document.body.removeChild(textarea);
+        }
+        if (!didCopy) return;
       }
       setCopied(true);
       setTimeout(() => setCopied(false), 1600);
@@ -40,12 +45,12 @@ export function InstallCommand() {
       type="button"
       onClick={handleCopy}
       aria-label="Copy install command"
-      className="group inline-flex max-w-full items-center gap-3 overflow-hidden rounded-xl border border-grid bg-panel px-5 py-4 text-left font-mono text-[14.5px] text-cool transition-colors hover:border-cool/40"
+      className="group inline-flex max-w-full items-center gap-3 rounded-xl border border-grid bg-panel px-5 py-4 text-left font-mono text-[14.5px] text-cool transition-colors hover:border-cool/40"
     >
       <span aria-hidden className="select-none text-alert">
         $
       </span>
-      <span className="truncate">{COMMAND}</span>
+      <span className="min-w-0 break-words">{COMMAND}</span>
       <span
         aria-live="polite"
         className={

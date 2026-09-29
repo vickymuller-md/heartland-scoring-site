@@ -15,7 +15,7 @@ export function Hero() {
           <div className="md:col-span-7 hs-reveal">
             <p className="inline-flex items-center gap-2 rounded-full border border-grid bg-panel px-3.5 py-1.5 font-editorial text-[12px] tracking-tight text-cool/80">
               <span className="h-1.5 w-1.5 rounded-full bg-signal hs-live" aria-hidden />
-              Peer-reviewed in Cureus · MIT licensed · Zero runtime deps
+              Open-source TypeScript · MIT licensed
             </p>
 
             <h1 className="mt-7 text-[clamp(2.5rem,6vw,5rem)] font-editorial font-semibold leading-[1.04] tracking-[-0.025em] text-cool">
@@ -26,11 +26,10 @@ export function Hero() {
             </h1>
 
             <p className="mt-7 max-w-xl font-editorial text-[17px] leading-[1.65] text-cool/75 md:text-[18px]">
-              A pure TypeScript implementation of the ten-variable risk
-              heuristic from the peer-reviewed HEARTLAND Protocol. Designed
-              for EHR vendors, clinical software platforms, and
-              research tools that want the scoring engine without adopting
-              the full reference app.
+              A TypeScript implementation of ten weighted criteria from the
+              HEARTLAND proposed framework pending validation. Explore the
+              scoring engine with fictional examples, without adopting the
+              full reference app. Zod is required by the package entry point.
             </p>
 
             <div className="mt-10">
@@ -59,9 +58,10 @@ export function Hero() {
             </div>
 
             <p className="mt-12 max-w-md font-editorial text-[12.5px] leading-relaxed text-stone">
-              Clinical implementation companion, not a medical device. Not
-              FDA-cleared. Built for licensed clinicians. Pragmatic heuristic
-              — formal prospective validation is a defined research objective.
+              Educational implementation-support resource. The underlying
+              article is published in Cureus; this does not establish software
+              peer review or clinical validation. Not for direct patient care
+              or unsupervised clinical use.
             </p>
           </div>
 
