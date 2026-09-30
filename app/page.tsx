@@ -29,6 +29,17 @@ export default function Home() {
       />
       <main className="flex-1">
         <Hero />
+        <section aria-labelledby="source-release" className="border-b border-grid bg-panel">
+          <div className="mx-auto max-w-[1200px] px-6 py-10">
+            <h2 id="source-release" className="font-editorial text-xl font-semibold text-cool">Source archive and installed package</h2>
+            <p className="mt-3 max-w-3xl leading-relaxed text-cool/75">
+              Source archive v1.0.2 is published on GitHub and Zenodo. This calculator
+              uses npm package v{SCORING_VERSION}; the source archive is not an npm
+              publication or a change to the running calculator. Neither establishes clinical validation.
+            </p>
+            <a href="https://doi.org/10.5281/zenodo.23050660" className="mt-4 inline-block text-alert underline underline-offset-4">View source archive v1.0.2</a>
+          </div>
+        </section>
         <Abstract />
         <QuickStart />
         <Calculator packageVersion={SCORING_VERSION} />
@@ -42,6 +53,7 @@ export default function Home() {
           {
             title: "Package",
             links: [
+              { label: "Source archive v1.0.2 (not the installed npm package)", href: "https://doi.org/10.5281/zenodo.23050660", external: true },
               { label: "Software archive v1.0.0 (historical)", href: "https://doi.org/10.5281/zenodo.19634995", external: true },
               { label: "Toolkit v3.3 archive", href: "https://doi.org/10.5281/zenodo.19101219", external: true },
               { label: "Underlying Cureus article", href: "https://doi.org/10.7759/cureus.104817", external: true },

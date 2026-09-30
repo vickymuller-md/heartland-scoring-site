@@ -37,7 +37,11 @@ test('the synthetic boundary and missing-input limitation remain visible', () =>
 });
 test('software archive and article citations identify different works', () => {
   const page = read('app/page.tsx'), legacy = read('components/landing/colophon.tsx');
-  for (const value of [page, legacy]) assert.match(value, /10\.5281\/zenodo\.19634995/);
+  for (const value of [page, legacy]) assert.match(value, /10\.5281\/zenodo\.23050660/);
+  assert.match(page, /Source archive v1\.0\.2/);
+  assert.match(page, /uses npm package v\{SCORING_VERSION\}/);
+  assert.match(page, /source archive is not an npm/);
+  assert.match(page, /10\.5281\/zenodo\.19634995/);
   assert.match(page, /Software archive v1\.0\.0/);
   assert.match(page, /Toolkit v3\.3 archive/);
   assert.match(page, /10\.7759\/cureus\.104817/);
@@ -56,8 +60,13 @@ if (process.env.HEARTLAND_SCORING_SITE_BUILT === '1') {
     assert.match(html, /Synthetic demonstration only/);
     assert.match(html, /npm install heartland-scoring zod/);
     assert.match(html, /10\.5281\/zenodo\.19634995/);
+    assert.match(html, /10\.5281\/zenodo\.23050660/);
+    const text = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '').replace(/<[^>]*>/g, '').replace(/\s+/g, ' ');
+    assert.ok(text.includes(`uses npm package v${installed.version}`));
+    assert.match(text, /Source archive v1\.0\.2/);
+    assert.match(text, /source archive is not an npm publication/);
     assert.match(html, /10\.7759\/cureus\.104817/);
     assert.match(html, /proposed framework pending validation/);
-    assert.doesNotMatch(html, /dependency-free|zero runtime|any EHR|Not FDA-cleared|Peer-reviewed in Cureus|1\.0\.2|clinical decision support|readmission risk \+ monitoring intensity/i);
+    assert.doesNotMatch(html, /dependency-free|zero runtime|any EHR|Not FDA-cleared|Peer-reviewed in Cureus|clinical decision support|readmission risk \+ monitoring intensity/i);
   });
 }

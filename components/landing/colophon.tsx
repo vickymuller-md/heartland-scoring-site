@@ -14,7 +14,7 @@ export function Colophon() {
         {/* Citation */}
         <div className="mb-14 rounded-2xl border border-grid bg-panel p-6 md:p-8">
           <p className="font-editorial text-[11.5px] uppercase tracking-[0.18em] text-alert">
-            Historical software archive — distinct from the installed version
+            Source archive — distinct from the installed npm package
           </p>
           <p className="mt-3 font-editorial text-[14.5px] leading-relaxed text-cool/85 md:text-[15px]">
             Muller Ferreira, V. (2026).{" "}
@@ -22,15 +22,19 @@ export function Colophon() {
               heartland-scoring: Risk Score Engine for Rural Heart Failure
               Management
             </span>{" "}
-            (v1.0.0). Zenodo.{" "}
+            (v1.0.2). Zenodo.{" "}
             <a
-              href="https://doi.org/10.5281/zenodo.19634995"
+              href="https://doi.org/10.5281/zenodo.23050660"
               target="_blank"
               rel="noopener noreferrer"
               className="text-alert underline decoration-alert/30 underline-offset-4 hover:decoration-alert"
             >
-              https://doi.org/10.5281/zenodo.19634995
+              https://doi.org/10.5281/zenodo.23050660
             </a>
+          </p>
+          <p className="mt-3 text-sm leading-relaxed text-cool/70">
+            The calculator uses npm package v{SCORING_VERSION}. This source archive
+            is not an npm publication or clinical validation.
           </p>
         </div>
 

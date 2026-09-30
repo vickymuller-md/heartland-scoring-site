@@ -22,8 +22,10 @@ proposed pending validation, with no authorization for patient care or PHI.
 The underlying [Cureus article](https://doi.org/10.7759/cureus.104817),
 [Toolkit v3.3](https://doi.org/10.5281/zenodo.19101219) and historical
 [software v1.0.0 archive](https://doi.org/10.5281/zenodo.19634995) are distinct
-works. Those archives do not identify future package versions or this site's
-current checkout. Article publication does not establish software peer review.
+works. The [source v1.0.2 archive](https://doi.org/10.5281/zenodo.23050660)
+was published on GitHub and Zenodo (verified 2026-09-30 UTC), but npm and this
+calculator still use v1.0.0. A source archive is not an npm publication or a
+deployment receipt. Article publication does not establish software peer review.
 
 ## Software preservation
 
